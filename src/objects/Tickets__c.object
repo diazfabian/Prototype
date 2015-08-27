@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Backlog__c</fullName>
+        <externalId>false</externalId>
+        <label>Backlog</label>
+        <referenceTo>Backlog__c</referenceTo>
+        <relationshipLabel>Tickets</relationshipLabel>
+        <relationshipName>Tickets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sort_order__c</fullName>
+        <externalId>false</externalId>
+        <label>Sort order</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending Estimation</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Estimated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dev In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending QA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QA In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Demo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Done</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Story_Point__c</fullName>
+        <externalId>false</externalId>
+        <label>Story Point</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_Of_Ticket__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Ticket</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Feature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Task</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Tickets</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Tickets Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Tickets</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Change_request</fullName>
+        <active>true</active>
+        <label>Change request</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Blocked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dev In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Done</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Estimation</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QA In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Of_Ticket__c</picklist>
+            <values>
+                <fullName>Bug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Task</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ChangedStatusEstimated</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL( Status__c ,&apos;Estimated&apos;) ,
+  ISBLANK(Story_Point__c)  
+)</errorConditionFormula>
+        <errorMessage>If the status is Estimated you must have a story point.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoChangedEstimated</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Status__c,&apos;Estimated&apos;), 
+ISPICKVAL(Status__c,&apos;Pending Demo&apos;),
+ISPICKVAL(Status__c,&apos;Dev In Progress&apos;),
+ISPICKVAL(Status__c,&apos;Pending QA&apos;),
+ISPICKVAL(Status__c,&apos;QA In Progress&apos;)
+),
+ISCHANGED( Story_Point__c ) )</errorConditionFormula>
+        <errorMessage>You can not update the story point, because it has been estimated</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NochangedPoint</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c, &apos;Done&apos;),
+ISCHANGED(Story_Point__c)
+)</errorConditionFormula>
+        <errorMessage>You can not change the  Storie Point</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Permission_For_Team_Member_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL(Status__c ,&apos;Done&apos;),  $Profile.Name = &apos;TMember&apos;)</errorConditionFormula>
+        <errorMessage>You can not update the status to done, because you have the necessary permission</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ValuesPO</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR
+(
+ ISPICKVAL(Status__c, &apos;Dev In Progress&apos;),
+ISPICKVAL(Status__c, &apos;Pending QA&apos;),
+ISPICKVAL(Status__c, &apos;QA In Progress&apos;),
+ ISPICKVAL(Status__c, &apos;Estimated&apos;)) , 
+$Profile.Name = &apos;Product Owner&apos;)</errorConditionFormula>
+        <errorMessage>You can only select the following states: 
+Done,
+Rejected,
+Pending Demo
+and Pending Estimation</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,13 @@
+<apex:page standardController="Tickets__c" extensions="ticketsController" tabStyle="Tickets__c">
+    <h1>Tickets</h1>
+    <apex:pageBlock>
+	    <apex:form>
+		    <apex:outputLabel value="Backlog" for="fBacklog" />
+            <apex:inputText value="{!objTickets.Backlog__c}" id="fBacklog" disabled="true"/>
+	        
+	       <apex:selectList value="{!objTickets.Status__c}"  multiselect="false" size="1">
+                <apex:selectOptions value="{!loadValuesPicklist}"/>
+            </apex:selectList> 
+	    </apex:form>
+    </apex:pageBlock>
+</apex:page>

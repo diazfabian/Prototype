@@ -1,0 +1,47 @@
+<apex:page standardController="Backlog__c" recordSetvar="pmtl" extensions="OrderTicketsFromProduct">
+    <!--<apex:stylesheet value="{!URLFOR($Resource.jQueryFiles, 'development-bundle/themes/base/jquery.ui.all.css')}"/>
+    <script src="{!URLFOR($Resource.jQueryFiles, 'development-bundle/jquery-1.4.4.js')}"/>
+    <script src="{!URLFOR($Resource.jQueryFiles, 'development-bundle/ui/jquery.ui.core.js')}"/>
+    <script src="{!URLFOR($Resource.jQueryFiles, 'development-bundle/ui/jquery.ui.widget.js')}"/>
+    <script src="{!URLFOR($Resource.jQueryFiles, 'development-bundle/ui/jquery.ui.mouse.js')}"/>
+    <script src="{!URLFOR($Resource.jQueryFiles, 'development-bundle/ui/jquery.ui.sortable.js')}"/>-->
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"/>
+    <script type="text/javascript">
+       var j$ = jQuery.noConflict();
+       
+       j$(document).ready(function(){
+            j$( "#sortable" ).sortable({
+                update: function(event, ui) {
+                    var sortOrder = j$("#sortable table").sortable('serialize', {attribute: 'data-id'});
+                    updateSortOrder(sortOrder);
+                }
+            });
+            j$( "#sortable" ).disableSelection();
+
+       });
+    </script>
+    
+    <apex:form >
+        <apex:pageBlock id="pgBlock" >
+        <apex:pageMessages />
+            <apex:PageBlockButtons location="both" id="sortable" >
+            <apex:commandButton value="Update Sort Order" action="{!processProjectTaskListBacklogUpdates}" reRender="pgBlock" />
+        </apex:PageBlockButtons>
+            <div id="sortable">
+                <apex:repeat value="{!Backlog}" var="p" id="theTable2">
+                    <table width="100%" data-id="{!p.Id}">
+                        <tr>
+                            <td width="15%"><apex:outputLink value="/{!p.Id}"></apex:outputLink></td>
+                            <td width="10%"><apex:outputLink value="/{!p.Name}"></apex:outputLink></td>
+
+                        </tr>
+                    </table>
+                </apex:repeat>  
+            </div>
+        </apex:pageBlock>
+        <apex:actionFunction name="updateSortOrder" action="{!updateSortOrder}" rerender="pgBlock">
+            <apex:param name="strSerialVal" value="" />
+        </apex:actionFunction>
+    </apex:form>
+</apex:page>

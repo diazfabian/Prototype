@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Projects__c</referenceTo>
+        <relationshipName>Backlogs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Start__c</fullName>
+        <externalId>false</externalId>
+        <label>Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stop_Sprint__c</fullName>
+        <description>Closing date of the sprint</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose the date of closing sprint</inlineHelpText>
+        <label>Stop Sprint</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stories_Backlog__c</fullName>
+        <externalId>false</externalId>
+        <label>Stories Backlog</label>
+        <summaryForeignKey>Tickets__c.Backlog__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Stories__c</fullName>
+        <externalId>false</externalId>
+        <label>Stories</label>
+        <summaryForeignKey>Tickets__c.Backlog__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Storie_Points__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Storie Points</label>
+        <summarizedField>Tickets__c.Story_Point__c</summarizedField>
+        <summaryFilterItems>
+            <field>Tickets__c.Story_Point__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tickets__c.Backlog__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Velocity__c</fullName>
+        <externalId>false</externalId>
+        <label>Velocity</label>
+        <summarizedField>Tickets__c.Story_Point__c</summarizedField>
+        <summaryFilterItems>
+            <field>Tickets__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Done</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tickets__c.Story_Point__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Tickets__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Tickets__c.Backlog__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Backlog</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Backlog Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Backlogs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Backlog_Sprint</fullName>
+        <active>true</active>
+        <label>Backlog Sprint</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_Backlog</fullName>
+        <active>true</active>
+        <label>Product Backlog</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>DontAddTicketsStart</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+ISCHANGED(Stories__c),
+ ISBLANK(Start__c)=FALSE
+)</errorConditionFormula>
+        <errorMessage>You can&apos;t add more tickets because the sprint already started</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>StopDate</fullName>
+        <active>true</active>
+        <description>The Stop date must not be less than the present day</description>
+        <errorConditionFormula>Stop_Sprint__c   &lt;=  TODAY()</errorConditionFormula>
+        <errorDisplayField>Stop_Sprint__c</errorDisplayField>
+        <errorMessage>The Stop date must not be less than the present day</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Tickets</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Add Tickets</masterLabel>
+        <openType>newWindow</openType>
+        <page>MoveTicket</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Start_Sprint</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Start Sprint</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+var back = new sforce.SObject(&apos;Backlog__c&apos;);
+back.id = &quot;{!Backlog__c.Id}&quot;;
+
+var backRecords = sforce.connection.query(&quot;SELECT Id, Start__c from Backlog__c Where Id = &apos;{!Backlog__c.Id}&apos;&quot;);
+
+var records = backRecords.getArray(&quot;records&quot;);
+if(records[0].Start__c != null)
+{
+alert(&apos;The sprint already started&apos;);
+}
+else{
+back.Start__c = new Date();
+result = sforce.connection.update([back]);
+alert(&apos;Sprint start successfully&apos;);
+location.reload(true);
+}</url>
+    </webLinks>
+</CustomObject>

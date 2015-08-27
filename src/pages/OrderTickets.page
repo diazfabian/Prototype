@@ -1,0 +1,55 @@
+<apex:page controller="TheController"> 
+<apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+<apex:includeScript value="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"/>
+<script type="text/javascript">
+ $(document).ready(function() { 
+    $('#update-button').click(function() {
+        var data_to_send = $('#list-items').sortable("serialize");  
+        var obj = JSON.stringify(data_to_send);  
+        $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url:"https://instance.salesforce.com/services/apexrest/TheController/createTickets",
+            data: obj
+        });
+        $('#update-message').html('Changes saved').css('color','green');
+            }); 
+    
+        $('#list-items').sortable({
+            containment: 'parent',
+            update: function() {
+        $('#update-message').html('Changes not saved').css('color','red');
+        }
+    });    
+    $('li').on('mouseover',function() {
+    $(this).css(
+        {
+            'backgroundColor' : 'skyblue',
+            'color' : 'white'
+        }
+    );
+    }).on('mouseout' ,function() {
+        $('li').css(
+            {
+                'backgroundColor' : '',
+                'color' : ''
+            }
+        )
+    }); 
+});
+</script>
+<div id="reorder">  
+  <h1>Order by priority </h1>
+  <apex:form >
+  <ul id="list-items" style="width:300px;">
+    <apex:repeat value="{!TicketByID}" var="p" id="theTable2">           
+    <li id='{!p.Id}{!p.Name}{!p.Sort_Order__C}'>
+     <apex:outputLink value="/{!p.Id}">{!p.Name}{!p.Sort_order__c}</apex:outputLink>
+    </li>             
+ </apex:repeat>
+</ul>
+<div id="update-message"></div>
+<button id="update-button">Click to save new order</button>
+</apex:form> 
+</div>
+</apex:page>
