@@ -24,6 +24,15 @@ public  class ticketsController {
             statusOptions.add(new SelectOption('Rejected','Rejected'));
             statusOptions.add(new SelectOption('Done','Done'));
         }
+        if(profileId=='00e61000000WNKeAAO'){
+            Schema.DescribeFieldResult status = Tickets__c.Status__c.getDescribe();
+            for (Schema.PickListEntry f : status.getPicklistValues()){
+            statusOptions.add(new SelectOption(f.getLabel(), f.getLabel()));    
+            }
+            
+            
+        }
        return statusOptions;        
     }
+     
 }

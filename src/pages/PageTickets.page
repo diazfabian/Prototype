@@ -1,13 +1,31 @@
 <apex:page standardController="Tickets__c" extensions="ticketsController" tabStyle="Tickets__c">
-    <h1>Tickets</h1>
-    <apex:pageBlock>
-	    <apex:form>
-		    <apex:outputLabel value="Backlog" for="fBacklog" />
-            <apex:inputText value="{!objTickets.Backlog__c}" id="fBacklog" disabled="true"/>
-	        
-	       <apex:selectList value="{!objTickets.Status__c}"  multiselect="false" size="1">
+    <apex:sectionHeader title="{!$ObjectType.Tickets__c.label} Edit" subtitle="New Ticket"/>
+    <apex:form>
+        <apex:pageBlock title="Edit Ticket" mode="edit">
+	        <apex:pageBlockButtons > 
+	            <apex:commandButton value="Save" action="{!save}"/>
+	            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+	        </apex:pageBlockButtons>    
+	    <apex:actionRegion>
+	    <apex:pageBlockSection title="Information" columns="1">
+	    <div class="requiredInput">
+	        <div class="requiredBlock"></div>
+            <apex:inputText value="{!Tickets__c.Backlog__c}" id="fBacklog" required="true"/>
+        </div>
+            <apex:selectList value="{!Tickets__c.Type_Of_Ticket__c  }" id="fType" multiselect="false" size="1">
+                 <apex:selectOption itemValue="New Feature" itemLabel="New Feature"/>
+                 <apex:selectOption itemValue="Change Request" itemLabel="Change Request"/>
+                 <apex:selectOption itemValue="Other Task" itemLabel="Other Task"/>
+                 <apex:selectOption itemValue="Bug" itemLabel="Bug"/>
+            </apex:selectList>
+	        <apex:selectList value="{!Tickets__c.Status__c}"  multiselect="false" size="1" id="fStatus" >
                 <apex:selectOptions value="{!loadValuesPicklist}"/>
-            </apex:selectList> 
-	    </apex:form>
+            </apex:selectList>
+            <apex:inputText value="{!Tickets__c.Name}" id="fName" styleClass="Name"/> 
+            <apex:inputTextArea value="{!Tickets__c.Description__c}" required="true" />           
+            <apex:inputText value="{!Tickets__c.Name}" id="fStoryPoint" styleClass="Story_Point__c"/> 
+        </apex:pageBlockSection>
+        </apex:actionRegion> 
     </apex:pageBlock>
+    </apex:form>
 </apex:page>
