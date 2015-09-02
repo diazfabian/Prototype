@@ -9,7 +9,7 @@
 			</apex:pageBlockButtons>    
 		    <apex:actionRegion>
 		    <apex:pageBlockSection title="Information" columns="1">
-			    <apex:inputText value="{!Tickets__c.Backlog__c}" id="fBacklog" required="true"/>
+			    <apex:inputField value="{!Tickets__c.Backlog__c}" id="fBacklog" required="true"/>
 				<apex:pageBlockSectionItem>
 					<apex:outputLabel value="Tickets Name" for="fName"/>
 					<apex:outputPanel>
